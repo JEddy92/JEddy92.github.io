@@ -39,3 +39,5 @@ I definitely need to take this to heart more. There were a couple of instances d
 Ending on a more colorful note, here's a chart that will answer all the questions you definitely had about daily traffic distributions among subway stations at the cross section of highest volume and best wealth characteristics. This tells you that if you want to canvas on a weekend you should go to Union Square, which seems to actually have the second highest weekend volume of any NYC subway station!
 
 ![plot1](/images/Bar_Appealing.png)
+
+If you're interested in seeing the code for the analysis, check out this [repo](https://github.com/JEddy92/Metis-Project1-MTA).
