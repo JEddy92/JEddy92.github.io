@@ -30,6 +30,6 @@ As a quick reflection, I'm really happy with how my workflow panned out for this
 
 ![SE2](/images/RegressMethodology.png)
 
-No, in my case it's not. But i'll get there! 
+No, in my case it's not. But I'll get there! 
 
 If you're interested in seeing the code for the scraper and analysis along with my slide presentation, check out this [repo](https://github.com/JEddy92/Metis-Project2-StatsStackExchange).
