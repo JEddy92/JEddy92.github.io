@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Weeks 2-3 At Metis Bootcamp - EDA on the MTA, Crazy Turnstiles, & Perfectionism
+title: Weeks 2-3 At Metis Bootcamp - Getting Meta with Stack Exchange Predictions
 ---
 
-My first week at Metis Bootcamp has flown by, and so far the biggest challenge has been getting this blog set up (just kidding, but it definitely took me much longer than it should have). This week's focus was getting up to speed on several of Python's linchpin data manipulation and analysis packages like numpy, pandas, and matplotlib, with our workflow anchored by a project on MTA subway traffic data. The goal of the project was to help a hypothetical non-profit promoting women in Tech come up with a strategy for canvasing at NYC subway stations. We were given broad leeway to set assumptions about what to look for in a station and who we wanted to target, and could incorporate any data we thought would be useful in addition to the MTA's official turnstile traffic data. Like many other teams, mine decided to cross reference the traffic data with neighborhood wealth data to aim for stations with high potential for both raising general awareness and finding valuable donors.
+We just wrapped up our second bootcamp project, presenting on Friday after two weeks of crunch time. For this project we had to generate our own datasets with web scraping, and use these datasets to build predictive regression models. The course section kicked off by covering python scraping tools (BeautifulSoup, Selenium, and Scrapy), moving toward a focus on core regression techniques as we gathered workable data.   
+
+This week's focus was getting up to speed on several of Python's linchpin data manipulation and analysis packages like numpy, pandas, and matplotlib, with our workflow anchored by a project on MTA subway traffic data. The goal of the project was to help a hypothetical non-profit promoting women in Tech come up with a strategy for canvasing at NYC subway stations. We were given broad leeway to set assumptions about what to look for in a station and who we wanted to target, and could incorporate any data we thought would be useful in addition to the MTA's official turnstile traffic data. Like many other teams, mine decided to cross reference the traffic data with neighborhood wealth data to aim for stations with high potential for both raising general awareness and finding valuable donors.
 
 ![plot1](/images/Line_Volume.png)
 
