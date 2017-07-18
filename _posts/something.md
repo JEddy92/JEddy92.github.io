@@ -22,4 +22,10 @@ Once I had all a pipeline for extracting all my nice word features, I got to wor
 
 ![plot1](/images/Pairplot_im.png)
 
+Having some modest predictive accuracy was cool, but seeing the results on word feature importance was my favorite part of the project. What I found was that most of the words most strongly associated with increased viewership were related to understanding -- words like "understand", "interpret", "explain", "read", and "wikipedia". On the other hand, some of the most negative associations included "want","like", and "problem", making me think of people asking questions to get a quick fix solution to a homework problem. My takeaway from this is that if you want your SE questions to get a lot of views, you should try being kind of highbrow, intellectual, and expansive instead of being demanding and localized in your phrasing. Be like Lucille Bluth! (well, maybe not...) 
+
+![lucille](/images/lucille.gif)
+
+As a quick reflection, 
+
 If you're interested in seeing the code for the scraper and analysis along with my slide presentation, check out this [repo](https://github.com/JEddy92/Metis-Project2-StatsStackExchange).
