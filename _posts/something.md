@@ -5,7 +5,7 @@ title: Weeks 2-3 At Metis Bootcamp - Getting Meta with Stack Exchange Prediction
 
 We just wrapped up our second bootcamp project, presenting on Friday after two weeks of crunch time. For this project we had to generate our own datasets with web scraping, and use these datasets to build predictive regression models. The course section kicked off by covering python scraping tools (BeautifulSoup, Selenium, and Scrapy), moving toward a focus on core regression techniques as we gathered workable data. We had opportunities to practice feature selection, model assumption testing, regularization, and cross validation. Best of all, we got to choose our own websites to target and define the scope of our project. I decided to see if I could predict how many views a statistics stack exchange question would get. The stack exchange website ("Cross Validated") is where people go to ask whatever statistics questions they might have and get insight from the broad internet community -- see below for an example of an on point question from RustyStatistician!      
 
-![plot1](/images/DataScientist.png)
+![SE1](/images/DataScientist.png)
 
 It was an interesting challenge to pull the data I needed from SE (I ended up with 100,000+ questions worth of data). Their HTML formatting was very consistent and clean, so it wasn't too hard to set up a scraping script to grab metadata like time asked, asker's reputation, and the topic tags along with the question text itself. The fun part was tuning my server request rate to not upset the website and trigger request blocking. With some trial and error I was able to reach a reasonable pace that let me gradually build out the full data set without spamming the site. I'm sorry for the times I made you sad SE :( 
 
@@ -26,6 +26,10 @@ Having some modest predictive accuracy was cool, but seeing the results on word 
 
 ![lucille](/images/lucille.gif)
 
-As a quick reflection, 
+As a quick reflection, I'm really happy with how my workflow panned out for this project. It was a lot of work, but I felt that I had a handle on it the entire time and didn't try to set unreasonable expectations for what I'd be able to do (fighting off the perfectionism). When I finished a bit early, I focused on pulling together a polished presentation instead of trying to go overboard with modeling. There are definitely a bunch of things I'd want to try to build on a model like this -- trying out optimized random forests, voting methods with individual models broken out by feature type, and even fancy text feature analysis like building a convNet. But that can wait for another day.
+
+![SE2](/images/RegressMethodology.png)
+
+No, in my case it's not. But i'll get there! 
 
 If you're interested in seeing the code for the scraper and analysis along with my slide presentation, check out this [repo](https://github.com/JEddy92/Metis-Project2-StatsStackExchange).
