@@ -9,26 +9,13 @@ We just wrapped up our second bootcamp project, presenting on Friday after two w
 
 It was an interesting challenge to pull the data I needed from SE (I ended up with 100,000+ questions worth of data). Their HTML formatting was very consistent and clean, so it wasn't too hard to set up a scraping script to grab metadata like time asked, asker's reputation, and the topic tags along with the question text itself. The fun part was tuning my server request rate to not upset the website and trigger request blocking. With some trial and error I was able to reach a reasonable pace that let me gradually build out the full data set without spamming the site. I'm sorry for the times I made you sad SE :( 
 
+Aside from the requirement that we work on a regression task, the project parameters were very open ended. And of course, for statistical modeling the choice of features is often even more important than the choice of model. It was clear that I should use the metadata features I had access to, but I also decided to leverage the text itself for making predictions. This was only scratching the surface of Natural Language Processing, but it was fun to extract word features and later analyze the associations between certain words and viewership levels. 
 
-
-
-
-
-![gif](/images/cat_comp.gif)
-
-Just imagine that the cat is doing a bunch of pandas groupby operations and screening out nonsensical data in a frenzy. True fact, this is what the cat is writing:
+I used a fairly basic method called term frequency - inverse document frequency (tf-idf), which is much simpler than it sounds. It just means that you go through each question counting how many times a certain word occurs, but then downweight that count based on how commonly the word occurs in the rest of the collection. For example, "is" occurs everywhere and shouldn't be worth much, but "correlation" is more specific and given importance if it occurs often in a question. It's amazing how much there is in the scikitlearn package and how easy it is to use. This code is essentially all you need to generate tf-idf feature columns --        
 
 ```python
-df_MTA_byDate = df_MTA.groupby(['C/A','UNIT','SCP','STATION','DATE','DAY_OF_WEEK']) \
-                .ENTRIES.agg({'MIN_ENTRIES':'min'})
-df_MTA_byDate = df_MTA_byDate.reset_index()
-
-df_MTA_byDate['DAILY_ENTRIES'] = df_MTA_byDate.groupby(['C/A','UNIT','SCP','STATION']) \
-                                 .MIN_ENTRIES.diff().shift(-1)
-
-df_MTA_byDate.drop('MIN_ENTRIES',axis=1,inplace=True) 
-df_MTA_byDate.loc[df_MTA_byDate['DAILY_ENTRIES'] < 0, 'DAILY_ENTRIES'] = np.nan
-df_MTA_byDate.loc[df_MTA_byDate['DAILY_ENTRIES'] > 100000, 'DAILY_ENTRIES'] = np.nan
+tfidf = TfidfVectorizer(tokenizer=tokenize, min_df = 50, stop_words='english')
+tfs_train = tfidf.fit_transform(X_train['text']).toarray()
 ```
 
 The idea here is to convert the raw turnstile entry data, which are cumulative counts, into daily entry values that will actually be useful for analysis. You can do this by taking the difference between cumulative entries at the start of the next day and cumulative entries at the start of the current day. But of course the data is not your friend, so sometimes the cumulative counts randomly reset or jump forward by hundreds of thousands. Either the MTA has found a way to demolish the space-time continuum (plausible, would explain the wait times and the current "state of emergency"), or the data... isn't quite accurate. So you want to NA out data points that are clearly invalid, and it takes some time to identify exactly all the ways that things can go wrong and figure out what cutoffs you should use.
