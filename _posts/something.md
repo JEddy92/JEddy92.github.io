@@ -3,13 +3,16 @@ layout: post
 title: Weeks 2-3 At Metis Bootcamp - Getting Meta with Stack Exchange Predictions
 ---
 
-We just wrapped up our second bootcamp project, presenting on Friday after two weeks of crunch time. For this project we had to generate our own datasets with web scraping, and use these datasets to build predictive regression models. The course section kicked off by covering python scraping tools (BeautifulSoup, Selenium, and Scrapy), moving toward a focus on core regression techniques as we gathered workable data. We had opportunities to practice feature selection, model assumption testing, regularization, and cross validation. Best of all, we got to choose our own websites to target and define the scope of our project. I decided to see if I could predict how many views a statistics stack exchange question would get. The stack exchange website ("Cross Validated") is where people go to ask whatever statistics questions they might have and get insight from the broad internet community -- see below for an example of an on point question!      
+We just wrapped up our second bootcamp project, presenting on Friday after two weeks of crunch time. For this project we had to generate our own datasets with web scraping, and use these datasets to build predictive regression models. The course section kicked off by covering python scraping tools (BeautifulSoup, Selenium, and Scrapy), moving toward a focus on core regression techniques as we gathered workable data. We had opportunities to practice feature selection, model assumption testing, regularization, and cross validation. Best of all, we got to choose our own websites to target and define the scope of our project. I decided to see if I could predict how many views a statistics stack exchange question would get. The stack exchange website ("Cross Validated") is where people go to ask whatever statistics questions they might have and get insight from the broad internet community -- see below for an example of an on point question from RustyStatistician!      
 
-![plot1](/images/Line_Volume.png)
+![plot1](/images/DataScientist.png)
 
-"Exploratory Data Analysis" (EDA) is a catch-all description of this project's process, meaning pretty much any studying and visualization of a dataset in order to extract meaning from it up until the the point of doing extensive statistical modeling and/or hypothesis testing. As an example of an end result, the chart above summarizes traffic trends by day of the week for the most frequented subway stations. The shading above and below each line shows the variance in daily station traffic, highlighting the fact that traffic trends are more reliable in the middle of the work week than at its start or end (this makes sense given holiday long weekends, variability in weekend travel plans, etc.) 
+It was an interesting challenge to pull the data I needed from SE (I ended up with 100,000+ questions worth of data). Their HTML formatting was very consistent and clean, so it wasn't too hard to set up a scraping script to grab metadata like time asked, asker's reputation, and the topic tags along with the question text itself. The fun part was tuning my server request rate to not upset the website and trigger request blocking. With some trial and error I was able to reach a reasonable pace that let me gradually build out the full data set without spamming the site. I'm sorry for the times I made you sad SE :( 
 
-Coming up with visualizations that tell a clear story about the data is one of the most enjoyable parts of EDA - these visualizations represent both the finished package of the information you've scraped together and your creative spin on how to frame that information. But before getting there, you usually have to spend some time battling the data to get it into a usable format with meaningful information. Here's a neat visual guide of how it's done: 
+
+
+
+
 
 ![gif](/images/cat_comp.gif)
 
@@ -40,4 +43,4 @@ Ending on a more colorful note, here's a chart that will answer all the question
 
 ![plot1](/images/Bar_Appealing.png)
 
-If you're interested in seeing the code for the analysis, check out this [repo](https://github.com/JEddy92/Metis-Project1-MTA).
+If you're interested in seeing the code for the scraper and analysis along with my slide presentation, check out this [repo](https://github.com/JEddy92/Metis-Project2-StatsStackExchange).
