@@ -1,6 +1,8 @@
 title: Forecasting with Neural Networks - An Introduction to Sequence-to-Sequence Modeling Of Time Series 
 
-Using data from the past to try to get a glimpse into the future has been around since humans have been, and should only become increasingly prevalent as computational and data resources expand. Companies can use quantitative forecasting methods to anticipate trends that are core to their business, improving their decision making and resource allocation. Examples abound: grocery chains and online retailers predict product demand for inventory stocking, popular websites predict page visits to manage server demand, and rideshare apps predict trip volume by area to distribute their drivers more effectively.     
+Using data from the past to try to get a glimpse into the future has been around since humans have been, and should only become increasingly prevalent as computational and data resources expand. Companies can use quantitative forecasting methods to anticipate trends that are core to their business, improving their decision making and resource allocation. Examples abound: grocery chains and online retailers predict product demand for inventory stocking, popular websites predict page visits to manage server demand, and rideshare apps predict trip volume by area to distribute their drivers more effectively.
+
+
 In traditional time series forecasting, series are often considered on an individual basis, and predictive models are then fit with series-specific parameters (e.g. ARIMA models). 
 This style of forecasting does not scale well to problems where the number of series to forecast extends to thousands or even hundreds of thousands of series. 
 Additionally, fitting series-specific models fails to capture the expressive general patterns that can be learned from studying many fundamentally related series. 
