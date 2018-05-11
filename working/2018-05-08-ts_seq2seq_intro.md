@@ -12,7 +12,7 @@ In traditional time series forecasting, series are often considered on an indivi
 
 Luckily, multi-step time series forecasting can be expressed as a sequence-to-sequence supervised prediction problem, a framework amenable to modern neural network models. At the cost of added complexity in constructing and tuning the model, it's possible to capture the entire predictive problem across all the series with one model. Since neural networks are natural feature learners, it's also possible to take a minimalistic approach to feature engineering when preparing the model. And when exogenous variables do need to be integrated into the model (e.g. product category, website language, day of week, etc.), it's simple due to the flexibility of neural network architectures. If you're not already sold on the potential power of this approach, check out the [DeepAR](https://arxiv.org/pdf/1704.04110.pdf) model that Amazon uses to forecast demand across a massive quantity of products.     
 
-So how does seq2seq work exactly? Let's first consider it in its original application domain as described by this [2014 paper](https://arxiv.org/abs/1409.3215), machine translation.   
+So how does seq2seq work exactly? Let's first consider it in its original application domain as described by this [2014 paper](https://arxiv.org/abs/1409.3215), machine translation. Here's a visualization summary, taken from [Fariz Rahman's repo](https://github.com/farizrahman4u/seq2seq) --   
 
 ![architecture_lang](/images/ts_intro/seq2seq_lang.png)
 
