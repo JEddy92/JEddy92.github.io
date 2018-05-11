@@ -14,10 +14,10 @@ Luckily, multi-step time series forecasting can be expressed as a sequence-to-se
 
 So how does seq2seq work exactly? Let's first consider it in its original application domain as described by this [2014 paper](https://arxiv.org/abs/1409.3215), machine translation.   
 
-![random_series](/images/ts_intro/seq2seq_lang.png)
+![architecture_lang](/images/ts_intro/seq2seq_lang.png)
 
 Encoder - decoder framework
 
-![random_series](/images/ts_intro/seq2seq_ts.png)
+![architecture_ts](/images/ts_intro/seq2seq_ts.png)
 
 In translation we condition on the entirety of an input sentence to generate a corresponding output sentence. Similarly, in a time series problem we can condition on the entire history of a series in order to make predictions about the future. The encoder’s final hidden state then becomes the decoder’s initial hidden state, and this vector serves as a learned representation of history.  
