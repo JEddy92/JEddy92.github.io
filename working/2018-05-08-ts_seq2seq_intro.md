@@ -24,5 +24,5 @@ To clarify this further, here's an excellent visual from Artur Suilin. I highly 
 
 ![architecture_ts](/images/ts_intro/seq2seq_ts.png)
 
-![architecture_ts](/images/ts_intro/seq2seq_preds.png)
+![ts_preds](/images/ts_intro/seq2seq_preds.png)
 
