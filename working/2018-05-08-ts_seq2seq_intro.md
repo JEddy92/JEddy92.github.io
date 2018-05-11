@@ -1,6 +1,6 @@
 title: Forecasting with Neural Networks - An Introduction to Sequence-to-Sequence Modeling Of Time Series 
 
-Note: if you're interested in building seq2seq time series models yourself using keras, check out the [introductory notebook](https://github.com/JEddy92/TimeSeries_Seq2Seq/blob/master/notebooks/TS_Seq2Seq_Intro.ipynb) that I've posted on github.
+**Note**: if you're interested in building seq2seq time series models yourself using keras, check out the [introductory notebook](https://github.com/JEddy92/TimeSeries_Seq2Seq/blob/master/notebooks/TS_Seq2Seq_Intro.ipynb) that I've posted on github.
 
 Using data from the past to try to get a glimpse into the future has been around since humans have been, and should only become increasingly prevalent as computational and data resources expand. Companies can use forecasting methods to anticipate trends that are core to their business, improving their decision making and resource allocation. Examples abound: grocery chains and online retailers predict product demand for inventory stocking, popular websites predict page visits to manage server demand, and rideshare apps predict trip volume by area to distribute their drivers more effectively.
 
