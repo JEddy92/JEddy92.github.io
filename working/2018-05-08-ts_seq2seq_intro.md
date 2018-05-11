@@ -12,14 +12,12 @@ In traditional time series forecasting, series are often considered on an indivi
 
 Luckily, multi-step time series forecasting can be expressed as a sequence-to-sequence supervised prediction problem, a framework amenable to modern neural network models. At the cost of added complexity in constructing and tuning the model, it's possible to capture the entire predictive problem across all the series with one model. Since neural networks are natural feature learners, it's also possible to take a minimalistic approach to feature engineering when preparing the model. And when exogenous variables do need to be integrated into the model (e.g. product category, website language, day of week, etc.), it's simple due to the flexibility of neural network architectures. If you're not already sold on the potential power of this approach, check out the [DeepAR](https://arxiv.org/pdf/1704.04110.pdf) model that Amazon uses to forecast demand across a massive quantity of products.     
 
-So how does seq2seq work exactly? Let's first consider it in its original application domain as described by this [2014 paper](https://arxiv.org/abs/1409.3215), machine translation.  
+So how does seq2seq work exactly? Let's first consider it in its original application domain as described by this [2014 paper](https://arxiv.org/abs/1409.3215), machine translation.   
 
-machine translation viz
+![random_series](/images/ts_intro/seq2seq_lang.png)
 
-text
+Encoder - decoder framework
 
-time series viz
-
-Intro to seq2seq NN - frequently used for NLP problems like machine translation (original source of the architecture). Encoder - decoder framework
+![random_series](/images/ts_intro/seq2seq_ts.png)
 
 In translation we condition on the entirety of an input sentence to generate a corresponding output sentence. Similarly, in a time series problem we can condition on the entire history of a series in order to make predictions about the future. The encoder’s final hidden state then becomes the decoder’s initial hidden state, and this vector serves as a learned representation of history.  
