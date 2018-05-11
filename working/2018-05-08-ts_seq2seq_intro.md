@@ -1,4 +1,7 @@
-title: Forecasting with Neural Networks - An Introduction to Sequence-to-Sequence Modeling Of Time Series 
+---
+layout: post
+title: Forecasting with Neural Networks - An Introduction to Sequence-to-Sequence Modeling Of Time Series
+---
 
 **Note**: if you're interested in building seq2seq time series models yourself using keras, check out the [introductory notebook](https://github.com/JEddy92/TimeSeries_Seq2Seq/blob/master/notebooks/TS_Seq2Seq_Intro.ipynb) that I've posted on github.
 
