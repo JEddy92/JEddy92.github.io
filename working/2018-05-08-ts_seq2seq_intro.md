@@ -18,6 +18,10 @@ So how does seq2seq work exactly? I'll give a high level description. Let's firs
 
 The model uses an "encoder-decoder" framework, mapping an arbitrarily long input sequence to an arbitrarily long output sequence with an intermediate encoded state. You can think of the encoded state as a representation of the entire history of the sequence that provides the context the decoder needs to generate an output sequence. In this case, the encoded state stores the neural network's "understanding" of the sentence it's read. This understanding is produced by iteratively "reading" each of the input words using an [LSTM architecture](http://colah.github.io/posts/2015-08-Understanding-LSTMs/), which produces the final state vectors that give the encoding. The decoder LSTM then takes these encoded state vectors for its initial state, iteratively "writing" each output and updating its internal state. 
 
+Note that only some of the language I just used was specific to NLP -- we can replace "word" with "token" or "value", and easily generalize to sequences from many problem domains. In particular, we can move from mapping between input and output sentences to mapping between time series. In time series forecasting, what we do is translate the past into the future. 
+
+To clarify this further, here's an excellent visual from Artur Suilin. I highly recommend checking out his [repo](https://github.com/Arturus/kaggle-web-traffic) with a state of the art time series seq2seq tensorflow model if you're interested in this subject.
+
 ![architecture_ts](/images/ts_intro/seq2seq_ts.png)
 
 In translation we condition on the entirety of an input sentence to generate a corresponding output sentence. Similarly, in a time series problem we can condition on the entire history of a series in order to make predictions about the future. The encoder’s final hidden state then becomes the decoder’s initial hidden state, and this vector serves as a learned representation of history.  
