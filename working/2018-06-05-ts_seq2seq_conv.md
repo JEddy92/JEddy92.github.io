@@ -1,12 +1,10 @@
 title: Time Series Forecasting with Convolutional Neural Networks 
 
-**Note**: if you're interested in building seq2seq time series models yourself using keras, check out the [introductory notebook](https://github.com/JEddy92/TimeSeries_Seq2Seq/blob/master/notebooks/TS_Seq2Seq_Intro.ipynb) that I've posted on github.
+**Note**: if you're interested in building a simple WaveNet-style CNN time series model yourself using keras, check out the [accompanying notebook - ADD LINK]() that I've posted on github. For an introductory look at high-dimensional time series forecasting with neural networks, you can read my previous [blog post -- ADD LINK]().
 
 Using data from the past to try to get a glimpse into the future has been around since humans have been, and should only become increasingly prevalent as computational and data resources expand. Companies can use forecasting methods to anticipate trends that are core to their business, improving their decision making and resource allocation. Examples abound: grocery chains and online retailers predict product demand for inventory stocking, popular websites predict page visits to manage server demand, and rideshare apps predict trip volume by area to distribute their drivers more effectively.
 
 These diverse applications share a common quantitative framework under the umbrella of time series forecasting. Each unit of interest (item, webpage, location) has a regularly measured value (purchases, visits, rides) that changes over time, giving rise to a large collection of time series.  
-
-![random_series](/images/ts_intro/random_series.png)
 
 In traditional time series forecasting, series are often considered on an individual basis, and predictive models are then fit with series-specific parameters. An example of this style is the classic **Autoregressive Integrated Moving Average (ARIMA)** model. Series-specific models can often make quite good predictions, but unfortunately they do not scale well to problems where the number of series to forecast extends to thousands or even hundreds of thousands of series. Additionally, fitting series-specific models fails to capture the expressive general patterns that can be learned from studying many fundamentally related series. From the examples above, we can see that this challenging “high-dimensional” time series setting is faced by many companies.
 
@@ -14,13 +12,17 @@ Luckily, multi-step time series forecasting can be expressed as a sequence-to-se
 
 So how does seq2seq work exactly? I'll give a high level description. Let's first consider it in its original application domain as described by this [2014 paper](https://arxiv.org/abs/1409.3215), machine translation. Here's a visualization summary, taken from [Fariz Rahman's repo](https://github.com/farizrahman4u/seq2seq) --   
 
-![architecture_lang](/images/ts_intro/seq2seq_lang.png)
+![WaveNet](/images/ts_conv/WaveNet_gif.gif)
 
 The model uses an "encoder-decoder" framework, mapping an arbitrarily long input sequence to an arbitrarily long output sequence with an intermediate encoded state. You can think of the encoded state as a representation of the entire history of the sequence that provides the context the decoder needs to generate an output sequence. In this case, the encoded state stores the neural network's "understanding" of the sentence it's read. This understanding is produced by iteratively "reading" each of the input words using an [LSTM architecture](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) (or similar type of recurrent neural network), which produces the final state vectors that give the encoding. The decoder LSTM then takes these encoded state vectors for its initial state, iteratively "writing" each output and updating its internal state. 
+
+![dilated_conv](/images/ts_conv/WaveNet_causalconv.png)
 
 Note that only some of the language I just used was specific to NLP -- we can replace "word" with "token" or "value", and easily generalize to sequences from many problem domains. In particular, we can move from mapping between input and output sentences to mapping between time series. In time series forecasting, what we do is translate the past into the future. We encode the entire history of a series including useful patterns like seasonality and trend, conditioning on this encoding to make future predictions.
 
 To clarify this further, here's an excellent visual from Artur Suilin. I highly recommend checking out his [repo](https://github.com/Arturus/kaggle-web-traffic) with a state of the art time series seq2seq tensorflow model if you're interested in this subject.
 
-![architecture_ts](/images/ts_intro/seq2seq_ts.png)
+![dilated_conv](/images/ts_conv/WaveNet_dilatedconv.png)
+
+![ts_preds](/images/ts_conv/conv_preds.png)
 
