@@ -1,8 +1,8 @@
-title: Time Series Forecasting with Convolutional Neural Networks 
+title: Time Series Forecasting with Convolutional Neural Networks - a Look at WaveNet
 
 **Note**: if you're interested in building a simple WaveNet-style CNN time series model yourself using keras, check out the [accompanying notebook - ADD LINK]() that I've posted on github. For an introductory look at high-dimensional time series forecasting with neural networks, you can read my previous [blog post -- ADD LINK]().
 
-Using data from the past to try to get a glimpse into the future has been around since humans have been, and should only become increasingly prevalent as computational and data resources expand. Companies can use forecasting methods to anticipate trends that are core to their business, improving their decision making and resource allocation. Examples abound: grocery chains and online retailers predict product demand for inventory stocking, popular websites predict page visits to manage server demand, and rideshare apps predict trip volume by area to distribute their drivers more effectively.
+If you're reading this blog, it's likely that you're familiar with some of the classic applications of convolutional neural networks to tasks like image recognition and text classification. Convolutions are a very natural and powerful tool for capturing spacially invariant patterns. It matters little *where* in the image whiskers occur when we're identifying a cat. Similarly, in classifying a document as a court case transcript, the *presence* of legal jargon phrases matters much more to us than their *position* in the document. But what about temporal patterns?    
 
   
   
