@@ -2,9 +2,11 @@ title: Time Series Forecasting with Convolutional Neural Networks - a Look at Wa
 
 **Note**: if you're interested in building a simple WaveNet-style CNN time series model yourself using keras, check out the [accompanying notebook - ADD LINK]() that I've posted on github. For an introductory look at high-dimensional time series forecasting with neural networks, you can read my previous [blog post -- ADD LINK]().
 
-If you're reading this blog, it's likely that you're familiar with some of the classic applications of convolutional neural networks to tasks like image recognition and text classification. Convolutions are a very natural and powerful tool for capturing spacially invariant patterns. It matters little *where* in the image whiskers occur when we're identifying a cat. Similarly, in classifying a document as a court case transcript, the *presence* of legal jargon phrases matters much more to us than their *position* in the document. But what about temporal patterns?    
+If you're reading this blog, it's likely that you're familiar with some of the classic applications of convolutional neural networks to tasks like image recognition and text classification. Convolutions are a very natural and powerful tool for capturing spacially invariant patterns. It matters little *where* in the image whiskers occur when we're identifying a cat. Similarly, in classifying a document as a court case transcript, the *presence* of legal jargon phrases matters much more to us than their *position* in the document. But what about temporal patterns? By a similar token, might there be recurring patterns like weekly cyclicality and certain autocorrelation structures that convolutions are well-suited to model?
 
-  
+
+
+
   
 
 ![WaveNet](/images/ts_conv/WaveNet_gif.gif)
