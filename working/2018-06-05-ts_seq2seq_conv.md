@@ -6,7 +6,7 @@ If you're reading this blog, it's likely that you're familiar with some of the c
 
 The answer is a resounding yes! It turns out that there are specialized convolutional architectures that perform quite well at time series prediction tasks. In this post I'll discuss one in particular, [DeepMind's WaveNet](https://deepmind.com/blog/wavenet-generative-model-raw-audio/), which was designed to advance the state of the art for text-to-speech systems. The WaveNet model's architecture allows it to exploit the efficiencies of convolution layers while simultaneously alleviating the challenge of learning long-term dependencies across a large number of timesteps (1000+). The latter is a frequent pain point for recurrent neural networks, even those that include some long-term memory mechanism like LSTMs. 
 
-At the heart of WaveNet's magic is the **dilated causal convolution layer**, which allows it to properly treat temporal order and handle long-term dependencies without an explosion in model complexity. Here's a nice visualization of its structure from DeepMind's post:
+At the heart of WaveNet's magic is the **dilated causal convolution layer**, which allows it to properly treat temporal order and handle long-term dependencies without an explosion in model complexity. Here's a nice visualization of its structure from DeepMind's post:  
 
   
   
