@@ -12,7 +12,7 @@ At the heart of WaveNet's magic is the **dilated causal convolution layer**, whi
 
 The visual is helpful, but let's try to gain more insight by breaking this down. First of all, what makes a convolution *causal*? In a traditional 1-dimensional convolution layer, we slide a filter of weights across an input series, sequentially applying it to (usually overlapping) regions of the series. But when we're using the history of a time series to predict its future, we have to be careful. As we form layers that eventually connect input steps to outputs, we must make sure that inputs do not influence output steps that proceed them in time. Otherwise, we would be using the future to predict the past, so our model would be cheating!       
 
-To ensure that we don't cheat in this way, we adjust our convolution design to explicitly prohibit the future from influencing the past. In other words, we only allow inputs to connect to future time step outputs in a **causal** structure, as pictured below in a visualization from the WaveNet paper. In practice, this causal 1D structure is easy to implement by shifting traditional convolutional outputs by a number of timesteps. Keras handles it via setting ```padding = 'causal'```.
+To ensure that we don't cheat in this way, we adjust our convolution design to explicitly prohibit the future from influencing the past. In other words, we only allow inputs to connect to future time step outputs in a **causal** structure, as pictured below in a visualization from the [WaveNet paper](https://arxiv.org/pdf/1609.03499.pdf). In practice, this causal 1D structure is easy to implement by shifting traditional convolutional outputs by a number of timesteps.
 
 
 ![dilated_conv](/images/ts_conv/WaveNet_causalconv.png)
