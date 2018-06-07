@@ -1,4 +1,7 @@
+---
+layout: post
 title: Time Series Forecasting with Convolutional Neural Networks - a Look at WaveNet
+---
 
 **Note**: if you're interested in learning more and building a simple WaveNet-style CNN time series model yourself using keras, check out the [accompanying notebook - ADD LINK]() that I've posted on github. For an introductory look at high-dimensional time series forecasting with neural networks, you can read my previous [blog post -- ADD LINK]().
 
