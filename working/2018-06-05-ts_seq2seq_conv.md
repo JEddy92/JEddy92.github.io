@@ -17,6 +17,9 @@ To ensure that we don't cheat in this way, we adjust our convolution design to e
 
 ![dilated_conv](/images/ts_conv/WaveNet_causalconv.png)
 
+With causal convolutions we have the proper tool for handling temporal flow, but we need an additional modification to properly handle long-term dependencies. In the simple causal convolution figure above, you can see that only the 5 most recent timesteps can influence the highlighted output. In fact, **we would require one additional layer per timestep** to reach farther back in the series (to use proper terminology, to increase the output's **receptive field**). With a time series that extends for over a year, using simple causal convolutions to learn from the entire history would quickly make our model way too computationally and statistically complex. 
+
+Instead of making that mistake, WaveNet uses **dilated convolutions**, which allow the receptive field to increase exponentially as a function of the number of convolutional layers. In a dilated convolution layer, filters are not applied to inputs in a simple sequential manner, but instead skip a constant **dilation rate** inputs in between each of the inputs they process, as in the WaveNet diagram below. By increasing the dilation rate multiplicatively at each layer (e.g. 1, 2, 4, 8, ...), we can achieve the exponential relationship between layer count and receptive field size that we desire. In the diagram, you can see how we now only need 4 layers to connect all of the 16 input series values to the highlighted output (say the 17th time step value).
 
 ![dilated_conv](/images/ts_conv/WaveNet_dilatedconv.png)
 
