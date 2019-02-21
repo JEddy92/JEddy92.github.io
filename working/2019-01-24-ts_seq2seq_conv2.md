@@ -16,8 +16,7 @@ The visual is helpful, but let's try to gain more insight by breaking this down.
 
 To ensure that we don't cheat in this way, we adjust our convolution design to explicitly prohibit the future from influencing the past. In other words, we only allow inputs to connect to future time step outputs in a **causal** structure, as pictured below in a visualization from the [WaveNet paper](https://arxiv.org/pdf/1609.03499.pdf). In practice, this causal 1D structure is easy to implement by shifting traditional convolutional outputs by a number of timesteps.
 
-
-![dilated_conv](/images/ts_conv/WaveNet_causalconv.png)
+![WaveNet_block](/images/ts_conv/CNN_skips.png)
 
 Causal convolutions provide the proper tool for handling temporal flow, but we need an additional modification to properly handle long-term dependencies. In the simple causal convolution figure above, you can see that only the 5 most recent timesteps can influence the highlighted output. In fact, **we would require one additional layer per timestep** to reach farther back in the series (to use proper terminology, to increase the output's **receptive field**). With a time series that has a large number of steps, using simple causal convolutions to learn from the entire history would quickly make a model way too computationally and statistically complex. 
 
