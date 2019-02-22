@@ -4,7 +4,7 @@ title: Time Series Forecasting with Convolutional Neural Networks Part 2 - Furth
 
 Picking up where we left off, let's complete our understanding of the WaveNet architecture by covering the enhancements that it adds around the dilated causal convolutions at the heart of the model. In particular, I'll discuss **gated activations** and **residual and skip connections**, all of which are incorporated into the individual computational blocks that define WaveNet. Although these enhancements aren't as fundamental to the model as the convolutional structure itself, we need to be comfortable with them to see the full picture. Also, this provides a nice window for exploration into cutting edge techniques that are used as model refinements across a broad range of problem domains including computer vision and NLP.        
 
-We'll start by taking a look at a diagram from the WaveNet paper that details how the model's components fit together block by block into a stack of operations. This way we get an immediate high level view, and have a handy reference as we go for how the methods discussed are embedded in the model. I encourage you to frequently return to this visual as each component is discussed!
+We'll start by taking a look at a diagram from the WaveNet paper that details how the model's components fit together block by block into a stack of operations. This way we get an immediate high level view, and have a handy reference as we go for how the methods discussed below are embedded in the model. I encourage you to frequently return to this visual as each component is introduced!
 
 ![WaveNet_block](/images/ts_conv/WaveNet_residblock.png)
 
