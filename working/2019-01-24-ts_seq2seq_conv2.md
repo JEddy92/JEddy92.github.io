@@ -2,7 +2,7 @@ title: Time Series Forecasting with Convolutional Neural Networks Part 2 - Furth
 
 **Note**: This is an overdue follow-up to my [previous blog post](https://jeddy92.github.io/JEddy92.github.io/ts_seq2seq_conv/) introducing the core components of the WaveNet model, a convolutional neural network built for time series forecasting. If you're interested in learning more and building a full-fledged WaveNet-style model yourself using keras, check out the [accompanying notebook - ADD LINK]() that I've posted on github.
 
-Picking up where we left off, let's complete our understanding of the WaveNet architecture by covering the enhancements that it adds around the dilated causal convolutions at the heart of the model.   
+Picking up where we left off, let's complete our understanding of the WaveNet architecture by covering the enhancements that it adds around the dilated causal convolutions at the heart of the model. In particular, I'll discuss **gated activations** and **residual and skip connections**, all of which are incorporated into the individual computational blocks that define WaveNet. Although these enhancements aren't as fundamental to the model as the convolutional structure itself, and provide a window for exploration into cutting edge techniques      
 
 ![WaveNet_block](/images/ts_conv/WaveNet_residblock.png)
 
