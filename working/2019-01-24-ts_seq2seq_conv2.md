@@ -42,7 +42,7 @@ With all the time we've taken to understand the WaveNet architecture, let's see 
 
 ![ts_preds](/images/ts_conv/conv_preds.png)
 
-This WaveNet model gets us a long way toward making high quality forecasts on the wikipedia traffic dataset, and so far we've only used the raw time series data for training! Why not incorporate relevant exogenous variables like day of the week and language of the page as well? We'll do exactly that in the next update of this series of posts/notebooks, so stay tuned if you're interested! 
+This WaveNet model gets us a long way toward making high quality forecasts on the wikipedia traffic dataset, and so far we've only used the raw time series data for training! Why not incorporate relevant exogenous variables like day of the week and language of the page as well to try to make the model even better? We'll do exactly that in the next update of this series of posts/notebooks, so stay tuned if you're interested! 
 
 
 
