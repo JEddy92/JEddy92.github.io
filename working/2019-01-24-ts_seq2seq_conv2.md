@@ -12,9 +12,7 @@ We'll start by taking a look at a diagram from the WaveNet paper that details ho
 
 In the boxed portion of the architecture diagram, you'll notice that the dilated convolution output splits into two branches that are later recombined via element-wise multiplication. This depicts a *gated activation unit*, where we interpret the *tanh* activation branch as a learned filter and the *sigmoid* activation branch as a learned gate that regulates the information flow from the filter. If this reminds you of the gating mechanisms used in [LSTMs or GRUs](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) you're on point, as those models use the same style of information gating to control adjustments to their cell states.
 
-In mathematical notation, this means we map a convolutional block's input $x$ to output $z$ via the below, where $W_f$ and $W_g$ correspond to (learned) dilated causal convolution weights:
-
-$$ z = tanh(W_f * x) \odot \sigma(W_g * x) $$
+In mathematical notation, this means we map a convolutional block's input *x* to output *z* via the formula below, where the *Ws* correspond to (learned) dilated causal convolution weights:
 
 ![Gated_formula](/images/ts_conv/gated_formula_diag.png)
 
