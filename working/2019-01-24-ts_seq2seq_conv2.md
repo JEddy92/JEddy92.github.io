@@ -16,7 +16,7 @@ In mathematical notation, this means we map a convolutional block's input *x* to
 
 ![Gated_formula](/images/ts_conv/gated_formula_diag.png)
 
-Why use gated activations instead of the more standard *ReLU* activation? The WaveNet designers found that gated activations saw stronger performance empirically than ReLU activations for audio data, and this outperformance may extend broadly to time series data. Perhaps the [sparsity induced by ReLU activations](http://proceedings.mlr.press/v15/glorot11a.html) is not as well suited to time series forecasting as it is to other problem domains, or gated activations allow for smoother information (gradient) flow over a many-layered WaveNet architecture. However, this choice of activation is certainly not set in stone and I'd be interested to see a results comparison when trying ReLU instead. With that caveat, we'll be sticking with the gated activations in the interest of learning about the full original architecture. 
+Why use gated activations instead of the more standard *ReLU* activation? The WaveNet designers found that gated activations saw stronger performance empirically than ReLU activations for audio data, and this outperformance may extend broadly to time series data. Perhaps the [sparsity induced by ReLU activations](http://proceedings.mlr.press/v15/glorot11a.html) is not as well suited to time series forecasting as it is to other problem domains, or gated activations allow for smoother information (gradient) flow over a many-layered WaveNet architecture. 
 
 ### **Residual and Skip Connections**
 
