@@ -4,11 +4,11 @@ title: About
 permalink: /about/
 ---
 
-I'm a senior data scientist at [Metis Data Science Training](https://www.thisismetis.com/), where I teach 12-week bootcamps for students transitioning into data science, teach corporate training programs, and work on personal projects. I have a Mathematics degree from Columbia, and have experience in Healthcare consumer and finance analytics. Before joining Metis I worked as an equity research associate in US Equity Strategy at Credit Suisse. 
+I'm a data science generalist with more than 7 years of experience in data science and analytics roles across blockchain tech, finance, and healthcare. I've been very focused on complex machine learning problems along with team leadership and mentorship. Most recently I led a data science team at a Series A blockchain analytics startup. Before that, I was a senior data scientist and instructor at Metis Data Science Training. 
 
-I also coach [NYU's Parli debate team](http://www.nyudebate.com/), having done competitive debate myself throughout high school and college. More recently, I've been getting my competitive kicks and learning a ton from [kaggle](https://www.kaggle.com/aquatic).
+I've had a lot of fun and learned a lot over the years on [kaggle](https://www.kaggle.com/aquatic), where I'm ranked as a competitions master.
 
-Long term I'll likely be based in New York, but at the moment I'm enjoying the west coast weather while teaching in San Francisco.
+I'm based in New York and love bouldering, reading, and playing piano.
 
 ### More Information
 
