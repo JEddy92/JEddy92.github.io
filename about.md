@@ -12,7 +12,7 @@ I'm based in New York and love bouldering, reading, and playing piano.
 
 ### More Information
 
-[Linkedin](https://www.linkedin.com/in/joseph-eddy-178425129)
+[LinkedIn](https://www.linkedin.com/in/joseph-eddy-178425129)
 
 ### Contact me
 
